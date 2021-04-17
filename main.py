@@ -26,7 +26,7 @@ async def on_message(message):
         await message.add_reaction('✅')
         return
     if message.content.startswith('T:'):
-        await message.channel.send('%s' % message.content)
+        await client.get_channel(812474792103903282).send('%s' % message.content)
 
 @client.event
 async def on_reaction_add(reaction, user):
