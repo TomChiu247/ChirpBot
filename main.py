@@ -10,15 +10,45 @@ GUILD = os.getenv('DISCORD_GUILD')
 
 client = discord.Client()
 
+
 @client.event
 async def on_ready():
-    for guild in client.guilds:
-        if guild.name == GUILD:
-            break
+    print('Bot is ready.')
 
-    print(
-        f'{client.user} is connected to the following guild:\n'
-        f'{guild.name}(id: {guild.id})'
-    )
+#@client.event
+#async def on_message2(message):
+#    if message.author == client.user:
+#        await message.add_reaction('✅')
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        await message.add_reaction('✅')
+        return
+    if message.content.startswith('T:'):
+        await message.channel.send('%s' % message.content)
+
+@client.event
+async def on_reaction_add(reaction, user):
+    if user == client.user:
+        return
+    channel = reaction.message.channel
+    msg_id = reaction.message.id
+
+    if reaction.emoji == '✅':
+        msg = await channel.fetch_message(msg_id)
+        await msg.edit(content="~~%s~~" % msg.content)
+
+@client.event
+async def on_reaction_remove(reaction, user):
+    if user == client.user:
+        return
+    channel = reaction.message.channel
+    msg_id = reaction.message.id
+
+    if reaction.emoji == '✅':
+        msg = await channel.fetch_message(msg_id)
+        await msg.edit(content="%s" % msg.content.replace('~~', '' ))
+
 
 client.run(TOKEN)
