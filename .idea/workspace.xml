@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc17974d-7528-441d-9ee1-dae0c66b38c8" name="Default Changelist" comment="workplace update">
+    <list default="true" id="cc17974d-7528-441d-9ee1-dae0c66b38c8" name="Default Changelist" comment="README update">
+      <change afterPath="$PROJECT_DIR$/BME25ClassProfile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bme25.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.replit" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +106,16 @@
       <workItem from="1618612515426" duration="3582000" />
       <workItem from="1618682539984" duration="8596000" />
       <workItem from="1618714309638" duration="7290000" />
-      <workItem from="1618728087890" duration="279000" />
+      <workItem from="1618728087890" duration="323000" />
+      <workItem from="1618796231908" duration="32000" />
+      <workItem from="1619382446308" duration="1401000" />
+      <workItem from="1619413255355" duration="8000" />
+      <workItem from="1619549109538" duration="6883000" />
+      <workItem from="1619643805154" duration="10594000" />
+      <workItem from="1619655506324" duration="7409000" />
+      <workItem from="1619712035213" duration="4107000" />
+      <workItem from="1619724061871" duration="634000" />
+      <workItem from="1619724851116" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="Task tracker added, optimization of multiple tasks per message to come">
       <created>1618682592862</created>
@@ -142,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618725392987</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="README update">
+      <created>1618728403034</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618728403034</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,9 +182,10 @@
     <MESSAGE value="Improved task tracker to send task to task channel instead of bot-commands" />
     <MESSAGE value="Implemented manual and every 24H fetching of quotes from api" />
     <MESSAGE value="workplace update" />
-    <option name="LAST_COMMIT_MESSAGE" value="workplace update" />
+    <MESSAGE value="README update" />
+    <option name="LAST_COMMIT_MESSAGE" value="README update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ChirpBot$main.coverage" NAME="main Coverage Results" MODIFIED="1618719583133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ChirpBot$main.coverage" NAME="main Coverage Results" MODIFIED="1619724446954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
