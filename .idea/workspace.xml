@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc17974d-7528-441d-9ee1-dae0c66b38c8" name="Default Changelist" comment="Added classprofile command to create collage of profile pictures">
-      <change afterPath="$PROJECT_DIR$/SIMPLIFICA.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/calibril.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pfp.png" afterDir="false" />
+    <list default="true" id="cc17974d-7528-441d-9ee1-dae0c66b38c8" name="Default Changelist" comment="Improved classprofile method with better design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BME25ClassProfile.png" beforeDir="false" afterPath="$PROJECT_DIR$/BME25ClassProfile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bme25.png" beforeDir="false" afterPath="$PROJECT_DIR$/bme25.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,6 +115,7 @@
       <workItem from="1619724061871" duration="634000" />
       <workItem from="1619724851116" duration="8680000" />
       <workItem from="1619742255334" duration="20846000" />
+      <workItem from="1619805393954" duration="1537000" />
     </task>
     <task id="LOCAL-00001" summary="Task tracker added, optimization of multiple tasks per message to come">
       <created>1618682592862</created>
@@ -171,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619733427518</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Improved classprofile method with better design">
+      <created>1619805436513</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1619805436513</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +198,8 @@
     <MESSAGE value="workplace update" />
     <MESSAGE value="README update" />
     <MESSAGE value="Added classprofile command to create collage of profile pictures" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added classprofile command to create collage of profile pictures" />
+    <MESSAGE value="Improved classprofile method with better design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved classprofile method with better design" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ChirpBot$main.coverage" NAME="main Coverage Results" MODIFIED="1619769476856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

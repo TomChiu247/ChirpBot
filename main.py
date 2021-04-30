@@ -4,10 +4,9 @@ import requests
 import json
 import discord
 from dotenv import load_dotenv
-from discord.ext import tasks, commands
+from discord.ext import commands
 import numpy as np
-from PIL import Image, ImageFont, ImageOps, ImageDraw
-import matplotlib.font_manager as fm
+from PIL import Image, ImageFont, ImageDraw
 from io import BytesIO
 
 load_dotenv()
@@ -47,6 +46,7 @@ async def on_ready():
     print('Bot is ready.')
 
 @client.command()
+@commands.has_role('chicken')
 async def classprofile(ctx, role: discord.Role = None):
     if role is None:
         role = 'bme25'
