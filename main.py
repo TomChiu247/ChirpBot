@@ -5,7 +5,9 @@ import json
 import discord
 from dotenv import load_dotenv
 from discord.ext import tasks, commands
-from PIL import Image
+import numpy as np
+from PIL import Image, ImageFont, ImageOps, ImageDraw
+import matplotlib.font_manager as fm
 from io import BytesIO
 
 load_dotenv()
@@ -18,6 +20,20 @@ client = commands.Bot(command_prefix='$', help_command=None, intents=intents)
 quotes_channel = 812474792103903283
 tasks_channel = 812474792103903282
 bme25_role_id = 695845672523661323
+
+def mask_circle_transparent(data, size):
+    profile_picture = Image.open(data).convert("RGB")
+    profile_picture = profile_picture.resize(size)
+    npImage = np.array(profile_picture)
+
+    mask = Image.new("L", size, 0)
+    draw = ImageDraw.Draw(mask)
+    draw.pieslice([0, 0, size], 0, 360, fill=255)
+
+    npAlpha=np.array(mask)
+    npImage = np.dstack((npImage, npAlpha))
+    Image.fromarray(npImage).save('pfp.png')
+    return;
 
 def get_quote():
     response = requests.get\
@@ -37,35 +53,41 @@ async def classprofile(ctx, role: discord.Role = None):
     template = Image.open("bme25.png")
     row = 0
     column = 0
-    x_coordinate = 392
-    y_coordinate = 900
+    x_coordinate = 350
+    y_coordinate = 1200
+    size = (450, 450)
 
-    await ctx.send('before entering the loop')
+    #await ctx.send('before entering the loop')
     # Going through server members to add the profile pictures of BME students into list
     for guild in client.guilds:
         for member in guild.members:
-            await ctx.send('Entered for loop')
             if role in member.roles: #role.id:
-                await ctx.send('Entered if condition')
                 asset = member.avatar_url_as(format="png", size=256)
                 data = BytesIO(await asset.read())
-                profile_picture = Image.open(data)
-                profile_picture = profile_picture.resize((400, 400))
+                mask_circle_transparent(data, size)
+                edited_asset = Image.open("pfp.png")
+
+                font = ImageFont.truetype("simplifica.ttf", 100)
+                name = member.display_name
+                name_pixel_length = len(name)
 
                 #pasting photos into template
-                template.paste(profile_picture, (x_coordinate, y_coordinate))
+                drawn_template = ImageDraw.Draw(template)
+                drawn_template.text((x_coordinate + (225-name_pixel_length*13), y_coordinate + 500), str(name), font=font)
+                template.paste(edited_asset, (x_coordinate, y_coordinate), edited_asset)
                 if column == 9:
                     row += 1
                     column = 0
-                    y_coordinate += 792
-                    x_coordinate = 392
+                    y_coordinate += 800
+                    x_coordinate = 350
                 else:
                     column += 1
-                    x_coordinate += 792
+                    x_coordinate += 800
 
-        template.save("BME25ClassProfile.png")
-        await ctx.send(file=discord.File("BME25ClassProfile.png"))
-        await ctx.send('Entered command')
+    template = template.resize((4350, 5630), Image.ANTIALIAS)
+    template.save("BME25ClassProfile.png", optimize=True)
+    channel = client.get_channel(709904167912865873)
+    await channel.send(file=discord.File("BME25ClassProfile.png"))
 
 #@client.event
 #async def on_message2(message):
